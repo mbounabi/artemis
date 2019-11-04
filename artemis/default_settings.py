@@ -24,10 +24,16 @@ REFERENCE_FILE_PATH = os.getenv("ARTEMIS_REFERENCE_FILE_PATH", "reference")
 # Path to Create responses and references files, when there is a fail
 RESPONSE_FILE_PATH = os.getenv("ARTEMIS_RESPONSE_FILE_PATH", "output")
 
+# URL for the broker (rabbitmq)
+CELERY_BROKER_URL = os.getenv(
+    "ARTEMIS_CELERY_BROKER_URL", "amqp://guest:guest@localhost:5672//"
+)
+
 # For ArtemisNG orchestrator, path to the sources of repo 'navitia-docker-compose'
 DOCKER_COMPOSE_PATH = os.getenv("ARTEMIS_DOCKER_COMPOSE_PATH")
 # For ArtemisNG orchestrator, path to the root of artemis tests sources
 TEST_PATH = os.getenv("ARTEMIS_TEST_PATH")
+
 
 TYR_DIR = "/srv/tyr"
 

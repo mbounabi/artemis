@@ -75,6 +75,11 @@ class ArtemisTestFixture(CommonTestFixture):
                     )
                 )
                 continue
+
+            from artemis import artemis_rabbit_mq_handler
+
+            artemis_rabbit_mq_handler.wait_for_event(data_set.name)
+
             cls.update_instance_db(data_set.name)
             cls.remove_data_by_dataset(data_set)
             cls.update_data_by_dataset(data_set)
